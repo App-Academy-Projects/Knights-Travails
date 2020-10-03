@@ -1,5 +1,5 @@
 class KnightPathFinder
-    def initialize
-        @kpf = KnightPathFinder.new([0, 0])
+    def initialize(target)
+        @target = target
     end
 end
