@@ -50,6 +50,12 @@ class KnightPathFinder
         end
     end
 
+    def find_path(end_pos)
+        end_node = @root_node.bfs(end_pos)
+        
+        path = trace_path_back(end_node).reverse
+    end
+
     def trace_path_back(end_node)
         current_node = end_node
         nodes = []
