@@ -14,10 +14,9 @@ MOVES = [
 
 class KnightPathFinder
     attr_reader :root_node
-    def initialize(initial_pos)
-        @initial_pos = initial_pos
-        @root_node = PolyTreeNode.new(@initial_pos)
-        @considered_positions = [initial_pos]
+    def initialize(start_pos)
+        @root_node = PolyTreeNode.new(start_pos)
+        @considered_positions = [start_pos]
     end
 
     def self.valid_moves(pos)
