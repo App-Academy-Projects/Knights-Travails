@@ -17,6 +17,8 @@ class KnightPathFinder
     def initialize(start_pos)
         @root_node = PolyTreeNode.new(start_pos)
         @considered_positions = [start_pos]
+
+        build_move_tree
     end
 
     def self.valid_moves(pos)
@@ -46,5 +48,16 @@ class KnightPathFinder
                 queue << next_node
             end
         end
+    end
+
+    def trace_path_back(end_node)
+        current_node = end_node
+        nodes = []
+
+        until current_node.nil?
+            nodes << current_node
+            current_node = current_node.parent
+        end
+        nodes
     end
 end
